@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>project</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style>
+		
+		#eva
+		{
+			padding-bottom: 30px;
+			text-align: center;
+
+		}
+
+		.box
+		{
+			width: 320px;
+ 			height: 450px;
+ 			background: rgba(0, 0, 0, 0.7);
+ 			color: #fff;
+ 			top: 50%;
+		 	left: 50%;
+		 	position: absolute;
+		 	transform: translate(-50%,-50%);
+		 	box-sizing: border-box;
+ 			
+
+ 			padding: 50px 70px;
+ 			font-family: sans-serif;
+ 			border-radius: 20px;
+ 			
+		}
+
+		.bg
+		{
+			margin: 0;
+			padding:0;
+			/*background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(img.jpg);*/background-color: #001433;
+			height: auto;
+			background-position: center;
+			background-size: cover;
+			min-height: 100vh;
+
+		}
+
+		.footer
+		{
+			background-color: #1a1a1a;
+			 width: 100%;
+			 height:60px;
+			 margin-top: 0px;
+			 position: absolute;
+			 bottom: 0;
+		}
+
+
+		.header
+		{
+			background-color: #1a1a1a;
+			top: 0px;
+			width: 100%;
+			height: 50px;
+			position: fixed;
+			
+		}
+
+		.form0 input[type=text], .form0 input[type=password]
+		{
+			/*border-radius: 5px;*/
+			background: none;
+			font-family: sans-serif;
+			text-align: center;
+			border: 0;
+			border-bottom: 2px solid;
+			padding: 14px 10px;
+			color: white;
+			outline: none;
+		}
+
+		.form0 input[type=text]:hover,.form0 input[type=password]:hover
+		{
+			border-color:#ff3385 ;
+			transition: 0.05s;
+
+		}
+
+
+		.form0 input[type=submit]
+		{
+			margin:1px 33px;
+			padding:12px 40px;
+			background: #47d147;
+			border: none;
+			font-family: sans-serif;
+			color: white;
+			border-radius: 5px;
+			outline: none;
+		}
+
+
+		.form0 input[type=submit]:hover
+		{
+			background-color: #29a329;
+			cursor: pointer;
+			transition: 0.05s;
+		}
+
+
+		#exp/* password*/
+		{
+			padding: 20px 1px;
+		} 
+
+
+		.register
+		{
+			font-size: 12px;
+			padding: 10px 7px;
+			
+		}
+
+		.form1 input[type=text], .form1 input[type=password]
+		{
+			/*border-radius: 5px;*/
+			background: none;
+			font-family: sans-serif;
+			text-align: center;
+			border: 0;
+			border-bottom: 2px solid;
+			padding: 14px 10px;
+			color: white;
+			outline: none;
+		}
+
+		.form1 input[type=text]:hover,.form1 input[type=password]:hover
+		{
+			border-color:#ff3385 ;
+			transition: 0.05s;
+
+		}
+
+
+		.form1 input[type=submit]
+		{
+			margin:18px 25px;
+			padding:12px 40px;
+			background: #47d147;
+			border: none;
+			font-family: sans-serif;
+			color: white;
+			border-radius: 5px;
+			outline: none;
+		}
+
+
+		.form1 input[type=submit]:hover
+		{
+			background-color: #29a329;
+			cursor: pointer;
+			transition: 0.05s;
+		}
+
+
+		#exp1/* password*/
+		{
+			padding: 20px 1px;
+		}
+
+
+		.register1
+		{
+			font-size: 12px;
+			padding: 10px 7px;
+			
+		}
+
+
+		.form0 .register a
+		{
+			color: #29a329;
+			text-decoration: none;
+		}
+
+
+		.form1 .register a
+		{
+			color: #29a329;
+			text-decoration: none;
+		}
+
+		.form1
+		{
+			display: none;
+		}
+
+		/*.form0
+		{
+			display: none;
+		}*/
+
+
+		.option #admin,.option #student
+		{
+			padding: 25px;
+			width: 200px;	
+			text-align: center;
+			border-radius: 40px 40px 40px 40px;
+			font-family: sans-serif;
+			font-size: 20px;
+			outline: none;
+			margin-left: -10px;
+			border: none;
+			color: white;
+
+		}
+
+
+		#student
+		{
+			margin-top: 60px;
+		}
+
+
+		#admin:hover
+		{
+			background-color: #ff1a1a;
+			cursor: pointer;
+			transition: 0.05s;
+		}
+
+
+
+		#admin
+		{
+			background: #ff3333;
+		}
+
+		#student
+		{
+			background: #47d147;
+		}
+
+
+		#student:hover
+		{
+			background-color: #29a329;
+			cursor: pointer;
+			transition: 0.05s;
+		}
+
+
+		#searchin
+		{
+			position: absolute; /* Benifit of using absolute is it doesnt pushes rest of the components down, instead it overlaps*/
+			background-color: white;
+			color: black;
+			font-family: sans-serif;
+			margin-right: 100%;
+			
+
+		}
+
+		
+	</style>
+</head>
+<body class="bg">
+
+	<div class="header">
+		<div style=" margin-top: -30px;"><h1 style="color: white; font-family: sans-serif; text-align: center; padding-top: 18px;">Assessment Tool</h1></div>
+	</div>
+
+
+	
+	
+<div style="padding-bottom: 70px;">
+<div class="box">
+
+
+<!--
+	<form class="option" style="margin-top: 70px">
+		<button id="admin" onclick="myfunction()">Admin</button>
+		<button id="student">Student</button>
+
+	</form>
+-->
+	
+
+	<form class="form0" action="loginpage.php" method="POST">
+
+		<h1 id="eva">Login</h1>
+		
+		<label for="user">Username</label>
+		<input type="text" placeholder="Username" maxlength="10"
+		id="user" name="regname" autocomplete="off">
+		<div id="searchin"></div> 
+		
+
+		<div id="exp">
+		<label for="pass">Password</label>
+		<input type="password" id="pass" placeholder="Password" maxlength="15" name="regpass">
+		</div>
+		<input type="submit" name="" value="Login">
+		<p class="register">New user? <a href="#">Create an account</a></p>
+	</form>
+		
+	
+
+	<form class="form1" action="registration.php" method="POST">
+
+		<h1 id="eva1">Register</h1>
+		<label for="user1">Username</label>
+		<input type="text" placeholder="Enter a username" maxlength="10"
+		id="user1" name="regname">
+		<div id="exp1">
+		<label for="pass1">Password</label>
+		<input type="password" id="pass1" placeholder="Enter password" maxlength="15" name="regpass">
+		<input type="submit" name="" value="Register">
+		<p class="register">Already registered? <a href="#">Log-in</a></p>
+
+	</form>
+
+
+	
+
+
+</div>
+
+</div>
+
+<div class="footer"></div>
+	
+
+
+<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+  
+
+<script>
+	/*$('.register a').click(function() {
+		$('form').animate({height: "toggle",opacity: "toggle"},"slow");
+*/
+
+
+		$('.register a').click(function() {
+		$('form').animate({height: "toggle",opacity: "toggle"},"slow");
+
+
+
+		
+	});
+
+
+
+//Ajax============================================================================================
+
+
+
+  		$(document).ready(function(){  
+      	$('#user').keyup(function(){  
+           var query = $(this).val();  
+           if(query != '')  
+           {  
+                $.ajax({  
+                     url:"search.php",  
+                     method:"POST",  
+                     data:{query:query},  
+                     success:function(data)  
+                     {  
+                          $('#searchin').fadeIn();  
+                          $('#searchin').html(data);  
+                     }  
+                });  
+           }  
+
+           else
+           {
+
+                $('#searchin').fadeOut();  
+                $('#searchin').html("");  
+           }
+      	});  
+      	$(document).on('click', 'li', function(){  
+           $('#user').val($(this).text());  
+           $('#searchin').fadeOut();  
+     	 });  
+ 			});  
+   
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
